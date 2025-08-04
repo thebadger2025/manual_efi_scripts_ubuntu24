@@ -1,1 +1,2 @@
 # manual_efi_scripts_ubuntu24
+https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Checking_Secure_Boot_status
