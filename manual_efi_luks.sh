@@ -1,5 +1,8 @@
 #!/bin/bash
-
+#
+# script to automate some of the tasks required to
+# ensure Ubuntu 24.04 uses Secure Boot with efi and luks
+#
 echo House-keeping - delete old files
 
 rm GUID.txt
