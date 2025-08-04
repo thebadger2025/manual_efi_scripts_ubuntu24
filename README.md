@@ -1,0 +1,1 @@
+# manual_efi_scripts_ubuntu24
