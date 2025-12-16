@@ -1,0 +1,10 @@
+  late-commands:
+    - mkdir -p /target/etc/cryptsetup-keys.d /target/etc/cryptsetup-initramfs
+    - bash -c '
+        luks_uuid=$(blkid -t TYPE=crypto_LUKS -s UUID -o value);
+        cp /etc/cryptsetup-keys.d/root.key "/target/etc/cryptsetup-keys.d/${luks_uuid}.key";
+        chmod 600 "/target/etc/cryptsetup-keys.d/${luks_uuid}.key";
+        echo "dm_crypt-lvm UUID=${luks_uuid} /etc/cryptsetup-keys.d/${luks_uuid}.key luks" > /target/etc/crypttab;
+        echo "KEYFILE_PATTERN=/etc/cryptsetup-keys.d/*.key" >> /target/etc/cryptsetup-initramfs/conf-hook;
+      '
+    - curtin in-target --target=/target -- update-initramfs -c -k all
