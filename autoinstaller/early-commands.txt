@@ -1,0 +1,4 @@
+early-commands:
+  - mkdir -p /etc/cryptsetup-keys.d
+  - dd if=/dev/urandom of=/etc/cryptsetup-keys.d/root.key bs=1024 count=4
+  - chmod 600 /etc/cryptsetup-keys.d/root.key
