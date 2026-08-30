@@ -36,7 +36,7 @@ goto START
 :CHANGE_DATE
 echo.
 echo Enter new date. 
-echo Note: Use the format shown above (e.g., MM-DD-YYYY or DD-MM-YYYY depending on your region).
+echo Note: Use the format shown above (e.g., YYYY-MM-DD or YY-MM-DD depending on your region).
 set /p new_date="New Date: "
 
 if "%new_date%"=="" goto START
